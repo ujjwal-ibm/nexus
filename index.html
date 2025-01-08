@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus - API Explorer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="nexus-wrapper">
+        <div id="nexus-background">
+            <div id="nexus-background-image" class="background-image"></div>
+        </div>
+
+        <div id="nexus-info">
+            <div class="nexus-clock">
+                <span class="clock-time"></span>
+                <div class="clock-weather">
+                    <i class="fa-duotone fa-sun"></i>
+                    <span class="weather-temp">72°F</span>
+                </div>
+            </div>
+            <div class="nexus-reminder">
+                <i class="fa-regular fa-lightbulb"></i>
+                <span>Explore various APIs and have fun!</span>
+            </div>
+        </div>
+
+        <div id="nexus-content">
+            <div id="nexus-content-wrapper">
+                <div id="nexus-content-header">
+                    <h1>API Nexus</h1>
+                </div>
+
+                <!-- Fun Section -->
+                <section id="fun-section" class="nexus-section">
+                    <div class="section-title">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        <span>Entertainment</span>
+                    </div>
+                    <div class="nexus-grid scrollable-component">
+                        <div class="nexus-card entertainment-card" data-api="cat">
+                            <div class="card-overlay"></div>
+                            <div class="card-content">
+                                <div class="card-info">
+                                    <h3>Cat Facts</h3>
+                                    <p>Random feline knowledge</p>
+                                </div>
+                                <i class="fa-solid fa-cat"></i>
+                            </div>
+                        </div>
+                        <div class="nexus-card entertainment-card" data-api="dog">
+                            <div class="card-overlay"></div>
+                            <div class="card-content">
+                                <div class="card-info">
+                                    <h3>Dog Gallery</h3>
+                                    <p>Adorable dog pictures</p>
+                                </div>
+                                <i class="fa-solid fa-dog"></i>
+                            </div>
+                        </div>
+                        <div class="nexus-card entertainment-card" data-api="joke">
+                            <div class="card-overlay"></div>
+                            <div class="card-content">
+                                <div class="card-info">
+                                    <h3>Joke Generator</h3>
+                                    <p>Get your daily laugh</p>
+                                </div>
+                                <i class="fa-solid fa-face-laugh-beam"></i>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Data Section -->
+                <section id="data-section" class="nexus-section">
+                    <div class="section-title">
+                        <i class="fa-solid fa-database"></i>
+                        <span>Data Discovery</span>
+                    </div>
+                    <div class="nexus-grid scrollable-component">
+                        <div class="nexus-card data-card" data-api="bitcoin">
+                            <div class="card-overlay"></div>
+                            <div class="card-content">
+                                <div class="card-info">
+                                    <h3>Crypto Tracker</h3>
+                                    <p>Live Bitcoin prices</p>
+                                </div>
+                                <i class="fa-solid fa-bitcoin-sign"></i>
+                            </div>
+                        </div>
+                        <div class="nexus-card data-card" data-api="ip">
+                            <div class="card-overlay"></div>
+                            <div class="card-content">
+                                <div class="card-info">
+                                    <h3>IP Lookup</h3>
+                                    <p>Your IP information</p>
+                                </div>
+                                <i class="fa-solid fa-network-wired"></i>
+                            </div>
+                        </div>
+                        <div class="nexus-card data-card" data-api="user">
+                            <div class="card-overlay"></div>
+                            <div class="card-content">
+                                <div class="card-info">
+                                    <h3>User Generator</h3>
+                                    <p>Random user profiles</p>
+                                </div>
+                                <i class="fa-solid fa-user-astronaut"></i>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Name Analysis Section -->
+                <section id="analysis-section" class="nexus-section">
+                    <div class="section-title">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <span>Name Analysis</span>
+                    </div>
+                    <div class="nexus-grid scrollable-component">
+                        <div class="nexus-card analysis-card" data-api="age">
+                            <div class="card-overlay"></div>
+                            <div class="card-content">
+                                <div class="card-info">
+                                    <h3>Age Oracle</h3>
+                                    <p>Age prediction by name</p>
+                                </div>
+                                <i class="fa-solid fa-hourglass"></i>
+                            </div>
+                        </div>
+                        <div class="nexus-card analysis-card" data-api="gender">
+                            <div class="card-overlay"></div>
+                            <div class="card-content">
+                                <div class="card-info">
+                                    <h3>Gender Insights</h3>
+                                    <p>Gender prediction by name</p>
+                                </div>
+                                <i class="fa-solid fa-venus-mars"></i>
+                            </div>
+                        </div>
+                        <div class="nexus-card analysis-card" data-api="nationality">
+                            <div class="card-overlay"></div>
+                            <div class="card-content">
+                                <div class="card-info">
+                                    <h3>Origin Finder</h3>
+                                    <p>Nationality prediction</p>
+                                </div>
+                                <i class="fa-solid fa-globe"></i>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div id="nexus-modal" class="nexus-modal">
+            <div class="modal-content">
+                <span class="modal-close">&times;</span>
+                <div class="modal-header"></div>
+                <div class="modal-body">
+                    <div class="input-wrapper"></div>
+                    <div class="result-wrapper"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

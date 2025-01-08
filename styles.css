@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+
+:root {
+    --background: #0f1729;
+    --surface: #1a2236;
+    --primary: #6ee7b7;
+    --secondary: #8b5cf6;
+    --accent: #fb7185;
+    --text-primary: #f3f4f6;
+    --text-secondary: #9ca3af;
+    --gradient-1: linear-gradient(135deg, #6ee7b7, #60a5fa);
+    --gradient-2: linear-gradient(135deg, #8b5cf6, #fb7185);
+    --gradient-3: linear-gradient(135deg, #fb7185, #fbbf24);
+    --overlay-dark: rgba(15, 23, 41, 0.8);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--background);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+#nexus-wrapper {
+    min-height: 100vh;
+    position: relative;
+}
+
+#nexus-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+#nexus-background-image {
+    width: 100%;
+    height: 100%;
+    background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba');
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px) brightness(0.3);
+    transform: scale(1.1);
+}
+
+#nexus-info {
+    padding: 2rem;
+    position: relative;
+}
+
+.nexus-clock {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.clock-time {
+    font-size: 4rem;
+    font-weight: 300;
+    color: var(--primary);
+    text-shadow: 0 0 20px rgba(110, 231, 183, 0.3);
+}
+
+.clock-weather {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.clock-weather i {
+    color: #fbbf24;
+    font-size: 1.5rem;
+}
+
+.weather-temp {
+    color: var(--text-secondary);
+    font-size: 1.25rem;
+}
+
+.nexus-reminder {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+}
+
+.nexus-reminder i {
+    color: var(--primary);
+}
+
+#nexus-content {
+    margin-top: 2rem;
+}
+
+#nexus-content-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+#nexus-content-header h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 2rem;
+}
+
+.nexus-section {
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.section-title i {
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+.section-title span {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.nexus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 0.5rem;
+}
+
+.scrollable-component {
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary) var(--surface);
+}
+
+.scrollable-component::-webkit-scrollbar {
+    height: 4px;
+}
+
+.scrollable-component::-webkit-scrollbar-track {
+    background: var(--surface);
+}
+
+.scrollable-component::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 4px;
+}
+
+.nexus-card {
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    min-height: 200px;
+}
+
+.nexus-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--overlay-dark);
+    backdrop-filter: blur(4px);
+}
+
+.card-content {
+    position: relative;
+    z-index: 1;
+    padding: 1.5rem;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.card-info h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.card-info p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.card-content i {
+    font-size: 2.5rem;
+    opacity: 0.8;
+    transition: transform 0.3s ease;
+}
+
+.nexus-card:hover .card-content i {
+    transform: scale(1.1);
+}
+
+/* Card variations */
+.entertainment-card {
+    background: var(--gradient-1);
+}
+
+.data-card {
+    background: var(--gradient-2);
+}
+
+.analysis-card {
+    background: var(--gradient-3);
+}
+
+/* Modal styles */
+.nexus-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--overlay-dark);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 600px;
+    background: var(--surface);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+    color: var(--primary);
+}
+
+.modal-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.input-wrapper {
+    margin-bottom: 1.5rem;
+}
+
+.nexus-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    color: var(--text-primary);
+    font-family: 'Montserrat', sans-serif;
+    transition: border-color 0.3s ease;
+}
+
+.nexus-input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.nexus-button {
+    background: var(--gradient-1);
+    color: var(--background);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.nexus-button:hover {
+    transform: translateY(-2px);
+}
+
+.result-wrapper {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+/* Loading animation */
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.loading-spinner i {
+    font-size: 2rem;
+    color: var(--primary);
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .clock-time {
+        font-size: 3rem;
+    }
+
+    #nexus-content-wrapper {
+        padding: 1rem;
+    }
+
+    .nexus-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-content {
+        width: 95%;
+        margin: 1rem;
+    }
+}
